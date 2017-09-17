@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  batchID: 1
+  productID: 1
+  quantity: 1
+  expiryDate: 2017-09-17
+
+two:
+  batchID: 1
+  productID: 1
+  quantity: 1
+  expiryDate: 2017-09-17

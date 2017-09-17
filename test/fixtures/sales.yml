@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  saleID: 1
+  batchID: 
+  salePrice: 1.5
+  saleStartDate: 2017-09-17
+  saleEndDate: 2017-09-17
+
+two:
+  saleID: 1
+  batchID: 
+  salePrice: 1.5
+  saleStartDate: 2017-09-17
+  saleEndDate: 2017-09-17
