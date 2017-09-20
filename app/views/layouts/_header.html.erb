@@ -1,0 +1,11 @@
+<header>
+    <h1 class="page-title"><%= yield(:title) %></h1>
+    <nav class="nav">
+        <ul class="nav nav-tabs">
+            <li class="nav-item active"><%= link_to "Scan", '/', class: 'nav-link' %></li>
+            <li class="nav-item"><%= link_to "Products", '/products', class: 'nav-link' %></li>
+            <li class="nav-item"><%= link_to "Checkout", '/', class: 'nav-link' %></li>
+        </ul>
+    </nav>
+    
+</header>

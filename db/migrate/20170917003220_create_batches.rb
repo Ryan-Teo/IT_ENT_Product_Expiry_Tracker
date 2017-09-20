@@ -1,12 +1,13 @@
 class CreateBatches < ActiveRecord::Migration
   def change
-    create_table :batches do |t|
-      t.integer :batchID
-      t.integer :productID
+    create_table :batches, id:false do |t|
+      t.integer :batchID, null: false
+      t.integer :productID, null: false
       t.integer :quantity
       t.date :expiryDate
 
       t.timestamps null: false
     end
+    add_index:batches, :batchID, unique: true
   end
 end

@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  
+  root 'static_pages#scan'
+  
+  get 'static_pages/scan'
+  
+  get '/products', to:'static_pages#products'
+  get '/batches', to:'static_pages#batches'
+  
+  
   get 'batches/new'
 
   get 'batches/create'
@@ -40,6 +49,8 @@ Rails.application.routes.draw do
   get 'products/index'
 
   get 'products/show'
+  
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
