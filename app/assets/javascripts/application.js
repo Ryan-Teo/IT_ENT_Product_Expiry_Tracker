@@ -17,8 +17,6 @@
 //= require jquery3
 //= require popper
 //= require bootstrap
-//= require quagga
-//= require_tree .
 
 function toggleDiv() {
 //   document.getElementById('hidden_row').style.display = "inline-block";
