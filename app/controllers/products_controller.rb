@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
     # Store a new instance of product with specified product_params
     @product =  Product.new(product_params)
     
-    # if successfull, display flash message
+    # if successfully, display flash message
     if @product.save
       flash[:success] = "New Product Added!"
     else
