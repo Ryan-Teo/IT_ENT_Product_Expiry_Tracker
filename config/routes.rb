@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   
   get '/products', to:'static_pages#products'
   get '/batches', to:'static_pages#batches'
-  
+  get '/form', to:'static_pages#form'
   
   get 'batches/new'
 

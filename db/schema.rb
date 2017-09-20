@@ -11,10 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170917003220) do
+ActiveRecord::Schema.define(version: 20170920093243) do
 
   create_table "batches", id: false, force: :cascade do |t|
-    t.integer  "batchID",    null: false
+    t.string   "batchID",    null: false
     t.integer  "productID",  null: false
     t.integer  "quantity"
     t.date     "expiryDate"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20170917003220) do
   add_index "batches", ["batchID"], name: "index_batches_on_batchID", unique: true
 
   create_table "products", id: false, force: :cascade do |t|
-    t.integer  "productID",   null: false
+    t.string   "productID",   null: false
     t.string   "name"
     t.string   "description"
     t.float    "price"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20170917003220) do
   add_index "products", ["productID"], name: "index_products_on_productID", unique: true
 
   create_table "sales", id: false, force: :cascade do |t|
-    t.integer  "saleID",        null: false
+    t.string   "saleID",        null: false
     t.integer  "batchID"
     t.float    "salePrice"
     t.date     "saleStartDate"
