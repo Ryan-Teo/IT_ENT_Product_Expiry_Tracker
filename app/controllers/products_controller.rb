@@ -58,6 +58,7 @@ class ProductsController < ApplicationController
   
  def get_barcode
     @product = Product.find_or_initialize_by(productID: params[:productID])
+    puts "product id is : #{@product.productID}."
     unless @product.new_record?
       redirect_to @product
     else

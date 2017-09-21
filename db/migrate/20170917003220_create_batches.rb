@@ -8,6 +8,6 @@ class CreateBatches < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-    add_index:batches, :batchID, unique: true
+    
   end
 end
