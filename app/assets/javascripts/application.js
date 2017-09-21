@@ -19,6 +19,17 @@
 //= require quagga
 //= require_tree .
 
+function toggleDiv() {
+//   document.getElementById('hidden_row').style.display = "inline-block";
+  var x = document.getElementById('hidden_row');
+    if (x.style.display === 'none') {
+        x.style.display = 'block';
+    } else {
+        x.style.display = 'none';
+    }
+}
+
+
 function order_by_occurrence(arr) {
   var counts = {};
   arr.forEach(function(value){
@@ -48,7 +59,7 @@ function load_quagga(){
           $.ajax({
             type: "POST",
             url: '/products/get_barcode',
-            data: { upc: code }
+            data: { productID: code }
           });
         }
       });
@@ -73,4 +84,10 @@ function load_quagga(){
   }
 };
 $(document).on('turbolinks:load', load_quagga);
+
+
+
+
+
+
 

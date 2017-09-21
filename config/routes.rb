@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+   resources :products do
+    post :get_barcode, on: :collection
+  end
+  
   root 'static_pages#scan'
   
   get 'static_pages/scan'
@@ -36,19 +40,7 @@ Rails.application.routes.draw do
 
   get 'sales/show'
 
-  get 'products/new'
-
-  get 'products/create'
-
-  get 'products/update'
-
-  get 'products/edit'
-
-  get 'products/destroy'
-
-  get 'products/index'
-
-  get 'products/show'
+ 
   
   
 
