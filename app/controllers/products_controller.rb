@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   def new
     #Create a new instance of product
     @product = new Product
-    @product.upc = params[:productID]
+    @product.productID = params[:productID]
   end
 
   def create
@@ -57,11 +57,11 @@ class ProductsController < ApplicationController
   end
   
  def get_barcode
-    @product = Product.find_or_initialize_by(upc: params[:productID])
+    @product = Product.find_or_initialize_by(productID: params[:productID])
     unless @product.new_record?
       redirect_to @product
     else
-      redirect_to new_product_path(upc: params[:productID])
+      redirect_to new_product_path(productID: params[:productID])
     end
   end
   

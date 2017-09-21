@@ -53,11 +53,9 @@ function load_quagga(){
         var last_code = result.codeResult.code;
         last_result.push(last_code);
         if (last_result.length > 20) {
-          alert("code found!");
           code = order_by_occurrence(last_result)[0];
           last_result = [];
           Quagga.stop();
-          alert(code);
           $.ajax({
             type: "POST",
             url: '/products/get_barcode',
