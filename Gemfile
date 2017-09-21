@@ -54,7 +54,7 @@ group :development do
   gem 'spring'
 
   group :development, :test do
-  gem 'simple_form'
+  gem 'simple_form' , '~> 3.1.0'
   
 end
   
