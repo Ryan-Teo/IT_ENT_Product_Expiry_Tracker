@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
-  def new
-    #Create a new instance of product
-    @product = new Product
+  skip_before_filter :verify_authenticity_token  
+   def new
+    @product = Product.new
     @product.productID = params[:productID]
   end
 
