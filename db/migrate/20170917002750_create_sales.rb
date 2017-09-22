@@ -1,7 +1,7 @@
 class CreateSales < ActiveRecord::Migration
   def change
-    create_table :sales,id:false do |t|
-      t.integer :saleID, null: false
+    create_table(:sales, id: false, :primary_key => 'saleID') do |t|
+      t.string :saleID, null: false
       t.integer :batchID
       t.float :salePrice
       t.date :saleStartDate
@@ -9,7 +9,6 @@ class CreateSales < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-    add_index :sales, :saleId, unique: true
   end
    
 end

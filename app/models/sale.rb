@@ -1,3 +1,5 @@
 class Sale < ActiveRecord::Base
-    has_one:batch
+    self.primary_key = "saleID"
+    has_many:batches,dependent: :destroy
+    has_many:products, through: :batches
 end

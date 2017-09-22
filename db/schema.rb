@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170920093243) do
+ActiveRecord::Schema.define(version: 20170917003220) do
 
   create_table "batches", id: false, force: :cascade do |t|
     t.string   "batchID",    null: false
@@ -22,8 +22,6 @@ ActiveRecord::Schema.define(version: 20170920093243) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "batches", ["batchID"], name: "index_batches_on_batchID", unique: true
-
   create_table "products", id: false, force: :cascade do |t|
     t.string   "productID",   null: false
     t.string   "name"
@@ -32,8 +30,6 @@ ActiveRecord::Schema.define(version: 20170920093243) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
-
-  add_index "products", ["productID"], name: "index_products_on_productID", unique: true
 
   create_table "sales", id: false, force: :cascade do |t|
     t.string   "saleID",        null: false
@@ -44,7 +40,5 @@ ActiveRecord::Schema.define(version: 20170920093243) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
-
-  add_index "sales", ["saleID"], name: "index_sales_on_saleId", unique: true
 
 end
