@@ -1,2 +1,28 @@
-<h1>Batches#index</h1>
-<p>Find me in app/views/batches/index.html.erb</p>
+<!--<h1>Batches#index</h1>-->
+<!--<p>Find me in app/views/batches/index.html.erb</p>-->
+
+<nav class="breadcrumb">
+  <a class="breadcrumb-item" href="/products">Product Name (ID)</a>
+  <span class="breadcrumb-item active">Batches</span>
+</nav>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th class="col-xs-3">Batch ID</th>
+      <th class="col-xs-3">Initial Quantity</th>
+      <th class="col-xs-3">Current Quantity</th>
+      <th class="col-xs-3">Expiry Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @batches.each do |batch| %>
+    <tr>
+      <th scope="row"><%= batch.batchID %></th>
+      <td><%= batch.quantity %></td>
+      <td>12</td>
+      <td><%= batch.expiryDate %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+

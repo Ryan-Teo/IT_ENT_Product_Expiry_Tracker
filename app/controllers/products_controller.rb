@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   skip_before_filter :verify_authenticity_token  
+  
    def new
     @product = Product.new
     @product.productID = params[:productID]
@@ -48,7 +49,7 @@ class ProductsController < ApplicationController
 
   # render index page , lists all products in a table
   def index
-    @product = Product.all
+    @products = Product.all
   end
 
   #show individual detailed product page

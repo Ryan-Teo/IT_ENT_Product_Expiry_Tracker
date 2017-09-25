@@ -4,6 +4,41 @@ Rails.application.routes.draw do
     post :get_barcode, on: :collection
   end
   
+# rake routes
+#               Prefix Verb   URI Pattern                     Controller#Action
+# get_barcode_products POST   /products/get_barcode(.:format) products#get_barcode
+#             products GET    /products(.:format)             products#index
+#                      POST   /products(.:format)             products#create
+#          new_product GET    /products/new(.:format)         products#new
+#         edit_product GET    /products/:id/edit(.:format)    products#edit
+#              product GET    /products/:id(.:format)         products#show
+#                      PATCH  /products/:id(.:format)         products#update
+#                      PUT    /products/:id(.:format)         products#update
+#                      DELETE /products/:id(.:format)         products#destroy
+#                 root GET    /                               visitors#index
+  
+  resources :batches
+
+#               Prefix Verb   URI Pattern                     Controller#Action
+#               batches GET   /products(.:format)             batches#index
+#                      POST   /products(.:format)             batches#create
+#          new_batch GET      /products/new(.:format)         batches#new
+#         edit_batch GET      /products/:id/edit(.:format)    batches#edit
+#              batch GET      /products/:id(.:format)         batches#show
+#                      PATCH  /products/:id(.:format)         batches#update
+#                      PUT    /products/:id(.:format)         batches#update
+#                      DELETE /products/:id(.:format)         batches#destroy
+    
+  resources :sales
+  
+#           sales_new GET       /sales/new(.:format)               sales#new
+#           sales_create GET    /sales/create(.:format)         sales#create
+#           sales_update GET    /sales/update(.:format)         sales#update
+#           sales_edit GET      /sales/edit(.:format)             sales#edit
+#           sales_destroy GET   /sales/destroy(.:format)       sales#destroy
+#           sales_index GET     /sales/index(.:format)           sales#index
+#           sales_show GET      /sales/show(.:format)             sales#show
+  
   root 'static_pages#scan'
   
   get 'static_pages/scan'
@@ -11,34 +46,6 @@ Rails.application.routes.draw do
   get '/products', to:'static_pages#products'
   get '/batches', to:'static_pages#batches'
   get '/form', to:'static_pages#form'
-  
-  get 'batches/new'
-
-  get 'batches/create'
-
-  get 'batches/update'
-
-  get 'batches/edit'
-
-  get 'batches/destroy'
-
-  get 'batches/index'
-
-  get 'batches/show'
-
-  get 'sales/new'
-
-  get 'sales/create'
-
-  get 'sales/update'
-
-  get 'sales/edit'
-
-  get 'sales/destroy'
-
-  get 'sales/index'
-
-  get 'sales/show'
 
  
   

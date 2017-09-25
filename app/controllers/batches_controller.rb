@@ -1,6 +1,6 @@
 class BatchesController < ApplicationController
   def new
-    @batch = Batch.new
+    @batch = current_product.batches.build
   end
 
   def create
@@ -24,6 +24,7 @@ class BatchesController < ApplicationController
   end
 
   def index
+    @batches = Batch.all
   end
 
   def show
