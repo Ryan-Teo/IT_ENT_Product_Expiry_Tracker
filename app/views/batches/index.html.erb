@@ -1,10 +1,21 @@
-<!--<h1>Batches#index</h1>-->
-<!--<p>Find me in app/views/batches/index.html.erb</p>-->
 
+<% @batch = Batch.find_by(productID: params[:product]) %>
+<% @product = Product.find_by(productID: params[:product]) %>
+<% @productID = params[:product] %>
+
+
+<% provide(:title, "Batches") %>
+
+<% unless @product.nil? or @productID.nil? %>
 <nav class="breadcrumb">
-  <a class="breadcrumb-item" href="/products">Product Name (ID)</a>
+  <a class="breadcrumb-item" href="/products"><%= @product.name %> (<%= @productID %>)</a>
   <span class="breadcrumb-item active">Batches</span>
 </nav>
+<% if @batch.nil? %>
+<h2 id ="batch_placeholder"> Product <%= @product.name %> (<%= @productID %>) <br/> does not have any batches stored! </h2>
+<% end %>
+<% end %>
+<% unless @batch.nil? %>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -15,14 +26,19 @@
     </tr>
   </thead>
   <tbody>
-    <% @batches.each do |batch| %>
     <tr>
-      <th scope="row"><%= batch.batchID %></th>
-      <td><%= batch.quantity %></td>
+      <th scope="row"><%= @batch.batchID %></th>
+      <td><%= @batch.quantity %></td>
       <td>12</td>
-      <td><%= batch.expiryDate %></td>
+      <td><%= @batch.expiryDate %></td>
     </tr>
-    <% end %>
   </tbody>
 </table>
+<% end %>
+<% if @product.nil? or @productID.nil? %>
+<h2 id ="batch_placeholder"> Select a product from the list to view batches. </h2>
+<% end %>
+
+
+
 

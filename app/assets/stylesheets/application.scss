@@ -119,17 +119,9 @@ and (max-device-width : 1024px) {
         display: inline-block;
     }
     
-    // footer {
-    //     background: #b3c2bf;
-    //     color: #3b3a36;;
-    //     width: inherit;
-    //     display: inline-block;
-    //     bottom: 0;
-    // }
-    
     .container {
         width: inherit;
-        height: inherit;
+        height: 80%;
         display: flex;
         justify-content: center;
         flex-direction: column;
@@ -184,6 +176,7 @@ and (max-device-width : 1024px) {
     /** List View **/
     .list-group-item {
         padding: 2em 3em;
+        background-color: #ffffff;
         
         h5 {
             font-weight: bolder;
@@ -193,7 +186,7 @@ and (max-device-width : 1024px) {
     .list-group-item.active {
         z-index: 2;
         color: #3b3a36;
-        background-color: #c0dfd9;
+        background-color: #ffffff;
         border-color: #c0dfd9;
     }
     
@@ -221,7 +214,47 @@ and (max-device-width : 1024px) {
     .table tr {
         font-size: 1.8em;
     }
+    
+    /** Form View **/
+    form {
+        padding: 2em;
+        display: block;
+    }
+    
+    .row {
+        display: flex;
+        margin: 0;
+        margin-bottom: 2em;
+    }
+    
+    .col-form-label {
+        text-align: end;
+        font-weight: bold;
+        min-width: 30%;
+        font-size: 1.8em;
+        padding: 1em;
+    }
+    
+    .col-10 {
+        max-width: 70%;
+    }
+    
+    .form-control {
+        font-size: 1.8em;
+        padding: 1em;
+    }
   
+    /** Batch Page **/
+    #batch_placeholder {
+        width: inherit;
+        height: inherit;
+        color: #3b3a36;
+        font-size: 30px;
+        text-align: center;
+        font-weight: bold;
+        margin: 2em 0;
+        line-height: 1.5em;
+    }
 }
 
 /*driftingruby.com barcode scanner css*/

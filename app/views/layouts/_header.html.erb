@@ -2,9 +2,9 @@
     <h1 class="page-title"><%= yield(:title) %></h1>
     <nav class="nav">
         <ul class="nav nav-tabs">
-            <li class="nav-item active"><%= link_to "Scan", '/', class: 'nav-link' %></li>
-            <li class="nav-item"><%= link_to "Products", 'products#index', class: 'nav-link' %></li>
-            <li class="nav-item"><%= link_to "Checkout", '/', class: 'nav-link' %></li>
+            <li class="nav-item <%= 'active' if params[:controller] == '' or params[:controller] == 'form' %>"><%= link_to "Scan", '/', class: 'nav-link' %></li>
+            <li class="nav-item <%= 'active' if params[:controller] == 'products' or params[:controller] == 'batches' %>"><%= link_to "Products", 'products#index', class: 'nav-link' %></li>
+            <li class="nav-item <%= 'active' if params[:controller] == 'checkout' %>"><%= link_to "Checkout", 'checkout', class: 'nav-link' %></li>
         </ul>
     </nav>
     

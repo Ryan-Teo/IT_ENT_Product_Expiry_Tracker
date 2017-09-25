@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   
    resources :products do
     post :get_barcode, on: :collection
+    
+  
   end
   
 # rake routes
@@ -46,6 +48,7 @@ Rails.application.routes.draw do
   get '/products', to:'static_pages#products'
   get '/batches', to:'static_pages#batches'
   get '/form', to:'static_pages#form'
+  get '/checkout', to:'static_pages#checkout'
 
  
   

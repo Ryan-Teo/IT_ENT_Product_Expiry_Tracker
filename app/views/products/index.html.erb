@@ -2,16 +2,13 @@
 
 <div class="list-group">
   <% @products.each do |product| %>
-
-     <a href="/batches" class="list-group-item list-group-item-action flex-column align-items-start active">
+     <a href="/batches?product=<%= product.productID %>" class="list-group-item list-group-item-action flex-column align-items-start active">
       <div class="d-flex w-100 justify-content-between">
      <h5 class="mb-1"><%= product.name %></h5>
         <span class="badge badge-default badge-pill">216</span>
       </div>
-      <h6 class="mb-1">Description : <%= product.description %>, UniCode : <%= product.productID %> , <%= product.price %> </h6>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam suscipit ultrices purus, 
-      sed semper turpis. Maecenas consequat cursus luctus. Aliquam dictum gravida risus eget elementum.
-      Aliquam sed diam eget mauris congue dictum eu in ex.</p>
+      <h6 class="mb-1">Product Code: <%= product.productID %>  </h6>
+      <p>Description: <%= product.description %>, $<%= product.price %> </p>
     </a>
   <% end %>
 </div>
