@@ -26,17 +26,19 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row"><%= @batch.batchID %></th>
-      <td><%= @batch.quantity %></td>
-      <td><%= @batch.expiryDate %></td>
-      <td>
-          <div class="row d-flex w-100" style="margin-bottom: 0;" id="listview-row">
-            <%= link_to "Edit", edit_batch_path(:id => @batch.batchID), :class =>"btn btn-info btn-xs", :style => "font-size: initial; margin: 0em 0.5em;" %>
-            <%= link_to 'Delete', @batch ,:class =>"btn btn-warning btn-xs", :style => "font-size: initial; margin: 0em 0.5em;", method: :delete, data: { confirm: 'Are you sure?' } %>
-          </div>
-      </td>
-    </tr>
+    <% @batches.each do |batch| %>
+      <tr>
+        <th scope="row"><%= batch.batchID %></th>
+        <td><%= batch.quantity %></td>
+        <td><%= batch.expiryDate %></td>
+        <td>
+            <div class="row d-flex w-100" style="margin-bottom: 0;" id="listview-row">
+              <%= link_to "Edit", edit_batch_path(:id => batch.batchID), :class =>"btn btn-info btn-xs", :style => "font-size: initial; margin: 0em 0.5em;" %>
+              <%= link_to 'Delete', batch ,:class =>"btn btn-warning btn-xs", :style => "font-size: initial; margin: 0em 0.5em;", method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
+        </td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
 <% end %>

@@ -40,7 +40,7 @@ class BatchesController < ApplicationController
   end
 
   def index
-    @batch = Batch.all
+    @batches = Batch.all
   end
 
   def show
