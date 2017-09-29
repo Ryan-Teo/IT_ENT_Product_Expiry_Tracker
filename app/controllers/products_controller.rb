@@ -76,6 +76,6 @@ class ProductsController < ApplicationController
   # Product instance private attributes
   private 
   def product_params
-     params.require(:product).permit(:productID, :name, :description, :price , batch_ids:[])
+     params.require(:product).permit(:productID, :name, :description, :price)
   end
 end
