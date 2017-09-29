@@ -7,4 +7,5 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-products = Product.create(productID: )
+p1 = Product.create([{ productID: '81831000'}, { name: 'Collection Plenitas'}, 
+{ description: 'A4 Spring Notebook '}, { price: '$3.50'}])

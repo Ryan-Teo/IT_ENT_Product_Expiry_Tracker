@@ -11,24 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170917003220) do
+ActiveRecord::Schema.define(version: 20170928091146) do
 
   create_table "batches", id: false, force: :cascade do |t|
     t.string   "batchID",    null: false
-    t.integer  "productID",  null: false
+    t.string   "productID",  null: false
     t.integer  "quantity"
     t.date     "expiryDate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "product_id"
   end
 
+  add_index "batches", ["product_id"], name: "index_batches_on_product_id"
+
   create_table "products", id: false, force: :cascade do |t|
-    t.string   "productID",   null: false
+    t.string   "productID",                           null: false
     t.string   "name"
     t.string   "description"
-    t.float    "price"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.decimal  "price",       precision: 5, scale: 2
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.string   "batch_ids"
   end
 
   create_table "sales", id: false, force: :cascade do |t|

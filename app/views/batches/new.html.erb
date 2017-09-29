@@ -1,2 +1,11 @@
-<h1>Batches#new</h1>
-<p>Find me in app/views/batches/new.html.erb</p>
+<!--<h1>Batches#new</h1>-->
+<!--<p>Find me in app/views/batches/new.html.erb</p>-->
+
+<!--<h1>New Product</h1>-->
+<% provide(:title, "New Batch") %>
+
+<nav class="breadcrumb">
+  <a class="breadcrumb-item" href="/">Scan Barcode</a>
+  <span class="breadcrumb-item active">New Batch</span>
+</nav>
+<%= render 'form', batch: @batch %>

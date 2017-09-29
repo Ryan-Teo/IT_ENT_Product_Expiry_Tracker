@@ -1,2 +1,8 @@
-<h1>Products#edit</h1>
-<p>Find me in app/views/products/edit.html.erb</p>
+<% provide(:title, "Edit Product") %>
+
+<nav class="breadcrumb">
+  <a class="breadcrumb-item" href="/"><%= @product.name %> (<%= @product.productID %>)</a>
+  <span class="breadcrumb-item active">Edit Product</span>
+</nav>
+
+<%= render 'form', product: @product %>

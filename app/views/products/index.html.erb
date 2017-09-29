@@ -1,14 +1,24 @@
+
 <% provide(:title, "Products") %>
 
 <div class="list-group">
-  <% @products.each do |product| %>
-     <a href="/batches?product=<%= product.productID %>" class="list-group-item list-group-item-action flex-column align-items-start active">
+    <!--Listing all products-->
+  <%
+      @products.each do |product|
+        @total = Batch.where('productID' => product.productID).count
+  %>
+      <!--Redirect to batch index page of selected product-->
+    <a href="/batches?product=<%= product.productID %>" class="list-group-item list-group-item-action flex-column align-items-start active">
       <div class="d-flex w-100 justify-content-between">
-     <h5 class="mb-1"><%= product.name %></h5>
-        <span class="badge badge-default badge-pill">216</span>
+        <h5 class="mb-1"><%= product.name %></h5>
+        <span class="badge badge-default badge-pill"><%= @total %></span>
       </div>
-      <h6 class="mb-1">Product Code: <%= product.productID %>  </h6>
-      <p>Description: <%= product.description %>, $<%= product.price %> </p>
+      <h6 class="mb-1">Product Code: <%= product.productID %></h6>
+      <p>Description: <%= product.description %>, $<%= product.price %></p>
     </a>
+    <div class="row d-flex w-100 justify-content-between" style="padding: 0.5em 3em 3em; margin-bottom: 0;" id="listview-row">
+      <%= link_to "Edit", edit_product_path(:id => product.productID), :class =>"btn btn-info btn-xs" %>
+      <%= link_to 'Delete', product_url(:id => product.productID) , method: :delete, :class =>"btn btn-warning btn-xs", data: { confirm: 'Are you sure?' } %>
+    </div>
   <% end %>
 </div>
