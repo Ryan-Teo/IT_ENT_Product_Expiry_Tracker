@@ -4,7 +4,7 @@ class CreateProducts < ActiveRecord::Migration
       t.string :productID, null: false, :limit => 8
       t.string :name
       t.string :description
-      t.double :price
+      t.float :price
 
       t.timestamps null: false
     end
