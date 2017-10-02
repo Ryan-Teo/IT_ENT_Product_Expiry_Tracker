@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+   resources :batches do
+    post :reduce_quantity, on: :collection
+  end
+  
    resources :products do
     post :get_barcode, on: :collection
     
@@ -19,9 +23,7 @@ Rails.application.routes.draw do
 #                      DELETE /products/:id(.:format)         products#destroy
 #                 root GET    /                               visitors#index
   
-  resources :batches do
-    post :reduce_quantity, on: :collection
-  end
+ 
   
 
 #               Prefix Verb   URI Pattern                     Controller#Action

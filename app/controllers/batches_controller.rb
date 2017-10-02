@@ -54,17 +54,19 @@ class BatchesController < ApplicationController
   
   #function to render the checkout page
   def checkout
-    
+    @batches = Batch.all
   end
   
   #function to handle the data from the checkout page [POST]
   def reduce_quantity
-    @batch = Batch.find_by(batchID: params[:id])
+    @batch = Batch.find_by(batchID: params[:batchID])
     #update the quantity 
-    @batch.quantity -= 1
+    #@batch[:quantity] -= 1
+    
+    @batch.quantity = @batch.quantity - 1
   end
   
-  # def get_barcode
+  # def get_barcode   
   #   @product = Product.find_or_initialize_by(productID: params[:productID])
   #   unless @product.new_record?
   #     #Goes to new batch
