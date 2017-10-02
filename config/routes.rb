@@ -19,7 +19,10 @@ Rails.application.routes.draw do
 #                      DELETE /products/:id(.:format)         products#destroy
 #                 root GET    /                               visitors#index
   
-  resources :batches
+  resources :batches do
+    post :reduce_quantity, on: :collection
+  end
+  
 
 #               Prefix Verb   URI Pattern                     Controller#Action
 #               batches GET   /products(.:format)             batches#index
@@ -48,7 +51,7 @@ Rails.application.routes.draw do
   get '/products', to:'static_pages#products'
   get '/batches', to:'static_pages#batches'
   get '/form', to:'static_pages#form'
-  get '/checkout', to:'static_pages#checkout'
+  get '/checkout', to:'batches#checkout'
 
  
   

@@ -296,3 +296,13 @@ and (max-device-width : 1024px) {
   width: 100%;
   height: auto;
 }
+
+/*driftingruby.com barcode scanner css for checkout*/
+#barcode-scanner-checkout canvas.drawingBuffer, #barcode-scanner-checkout video.drawingBuffer {
+  display: none;
+}
+
+#barcode-scanner-checkout canvas, #barcode-scanner-checkout video {
+  width: 100%;
+  height: auto;
+}

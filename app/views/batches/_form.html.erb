@@ -1,8 +1,3 @@
-<%
-   @o = [(0..9)].map(&:to_a).flatten
-   @string = (0...7).map { @o[rand(@o.length)] }.join
-%>
-
 <% if @batch.nil?
     @product = Product.find_by(productID: params[:productID])
   else 
@@ -20,7 +15,7 @@
     <div class="form-group row">
       <label for="example-text-input" class="col-2 col-form-label">Batch ID</label>
       <div class="col-10">
-         <%= f.input :batchID, label: false, input_html: { class: 'form-control', value: @string }  %>
+         <%= f.input :batchID, label: false, input_html: { class: 'form-control', value: @batch.batchID }  %>
       </div>
     </div>
     <div class="form-group row">
